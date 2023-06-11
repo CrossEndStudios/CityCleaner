@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     float Horizontal_Inp;
     Vector3 Direction;
     public float MovementSpeed;
+    public float RotationSpeed;
 
     Rigidbody rb;
 
@@ -52,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (LookVector != Vector3.zero)
         {
-            transform.forward = LookVector;
+            transform.forward = Vector3.MoveTowards(transform.forward,LookVector, RotationSpeed * Time.deltaTime);
         }
     }
 

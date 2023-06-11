@@ -20,16 +20,12 @@ public class CameraFollow : MonoBehaviour
         TargetOffset = (Target.position - transform.position);
     }
 
-
-    
-
     Vector3 FollowPos;
     void Follow()
     {
         FollowPos = Target.position - TargetOffset;
 
         transform.LookAt(Target);
-
         if (LerpPosition)
         {
             transform.position = Vector3.MoveTowards(transform.position, FollowPos, FollowSpeed * Time.fixedDeltaTime);
@@ -44,4 +40,5 @@ public class CameraFollow : MonoBehaviour
     {
         Follow();
     }
+   
 }
