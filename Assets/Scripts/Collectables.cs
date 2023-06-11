@@ -16,9 +16,17 @@ public class Collectables : MonoBehaviour
 
     IEnumerator MoveToVaccume(Transform vaccumepoint,PlayerMovement player)
     {
+        Vector3 scale = transform.localScale;
+        Vector3 DecScale = new Vector3(0.01f, 0.01f, 0.01f);
+
         while (Vector3.Distance(transform.position,vaccumepoint.position) > 0.2f)
         {
             transform.position = Vector3.MoveTowards(transform.position, vaccumepoint.position, MovementSpeed * Time.deltaTime);
+
+            scale = transform.localScale;
+            scale = Vector3.MoveTowards(scale, DecScale, ShrinkingSpeed * Time.deltaTime);
+            transform.localScale = scale;
+
             yield return new WaitForSeconds(0.01f);
         }
         player.SuckedCollectables(this);
