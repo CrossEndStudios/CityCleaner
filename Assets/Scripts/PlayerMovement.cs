@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     float Ver_Cont;
     float Hor_Cont;
 
+    [Space]
+    [Header("Vaccume Variables")]
+    public Transform VaccumePoint;
+    public float SuckingSpeed;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -49,5 +54,19 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.forward = LookVector;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<Collectables>())
+        {
+            Collectables collect = other.GetComponent<Collectables>();
+            collect.GetSucked(SuckingSpeed, VaccumePoint,this);
+        }
+    }
+
+    public void SuckedCollectables(Collectables coll)
+    {
+        Destroy(coll.gameObject);
     }
 }
