@@ -11,6 +11,12 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    [Range(0,10)]
+    public float ControlDimDelay;
+
+    float Ver_Cont;
+    float Hor_Cont;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -19,8 +25,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vertical_Inp = Input.GetAxis("Vertical");
-        Horizontal_Inp = Input.GetAxis("Horizontal");
+        Vertical_Inp = SimpleInput.GetAxis("Vertical");
+        Horizontal_Inp = SimpleInput.GetAxis("Horizontal");
+
+
+        Ver_Cont = Mathf.Lerp(Ver_Cont, Vertical_Inp, ControlDimDelay * Time.deltaTime);
+        Hor_Cont = Mathf.Lerp(Hor_Cont, Horizontal_Inp, ControlDimDelay * Time.deltaTime);
     }
     private void FixedUpdate()
     {
@@ -28,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Controls()
     {
-        Direction = new Vector3(Horizontal_Inp, -20f * Time.fixedDeltaTime, Vertical_Inp);
+        Direction = new Vector3(Hor_Cont, -20f * Time.fixedDeltaTime, Ver_Cont);
 
         rb.velocity = (Direction * MovementSpeed) * Time.fixedDeltaTime;
 
