@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class GameData 
 {
-    public static List<Collectables> collected = new List<Collectables>();
+    public static List<int> collected = new List<int>();
 }

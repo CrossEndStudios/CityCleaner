@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
 
-    float dustindexTimer;
+    
 
     void Update()
     {
@@ -45,29 +45,7 @@ public class PlayerMovement : MonoBehaviour
         Hor_Cont = Mathf.Lerp(Hor_Cont, Horizontal_Inp, ControlDimDelay * Time.deltaTime);
 
 
-        if (Input.GetKey(KeyCode.P) )
-        {
-            if( dustindexTimer <= 0)
-            {
-                 if (GameData.collected.Count > 0)
-                 {
-                     Collectables col = GameData.collected[0];
-                     col.gameObject.transform.position = EjectutionPos.position;
-                     col.gameObject.SetActive(true);
-                    col.Eject();
-                     GameData.collected.Remove(col);
-                 }
-                 else
-                 {
-                     Debug.Log("DustClear");
-                 }
-                dustindexTimer = 0.1f;
-            }
-            else
-            {
-                dustindexTimer -= Time.deltaTime;
-            }
-        }
+        
         
 
     }
@@ -111,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void SuckedCollectables(Collectables coll)
     {
-        GameData.collected.Add(coll);
+        GameData.collected.Add(coll.GetIndex());
         coll.gameObject.SetActive(false);
     }
 }

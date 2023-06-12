@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class Collectables : MonoBehaviour
 {
+    public int DustIndex;
+
     float MovementSpeed;
     public float ShrinkingSpeed;
 
     public Rigidbody rb;
 
+    
+
     Vector3 oriScale;
+
+
     private void Start()
     {
         oriScale = transform.localScale;
-
-        rb = GetComponent<Rigidbody>();
         //deActivate();
+    }
+    public int GetIndex()
+    {
+        return DustIndex;
     }
     public void activate()
     {
@@ -52,4 +60,6 @@ public class Collectables : MonoBehaviour
         }
         player.SuckedCollectables(this);
     }
+
+    
 }
