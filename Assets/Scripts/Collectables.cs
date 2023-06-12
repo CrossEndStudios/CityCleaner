@@ -7,7 +7,28 @@ public class Collectables : MonoBehaviour
     float MovementSpeed;
     public float ShrinkingSpeed;
 
+    public Rigidbody rb;
 
+    Vector3 oriScale;
+    private void Start()
+    {
+        oriScale = transform.localScale;
+
+        rb = GetComponent<Rigidbody>();
+        //deActivate();
+    }
+    public void activate()
+    {
+        rb.isKinematic = false;
+    }
+    public void deActivate()
+    {
+        rb.isKinematic = true;
+    }
+    public void Eject()
+    {
+        transform.localScale = oriScale;
+    }
     public void GetSucked(float speed,Transform vaccumepoint,PlayerMovement player)
     {
         MovementSpeed = speed;

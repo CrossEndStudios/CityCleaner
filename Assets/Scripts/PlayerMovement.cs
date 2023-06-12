@@ -23,12 +23,18 @@ public class PlayerMovement : MonoBehaviour
     public Transform VaccumePoint;
     public float SuckingSpeed;
 
+    [Space]
+    public Transform EjectutionPos;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
+
+    float dustindexTimer;
+
     void Update()
     {
         Vertical_Inp = SimpleInput.GetAxis("Vertical");
@@ -37,6 +43,33 @@ public class PlayerMovement : MonoBehaviour
 
         Ver_Cont = Mathf.Lerp(Ver_Cont, Vertical_Inp, ControlDimDelay * Time.deltaTime);
         Hor_Cont = Mathf.Lerp(Hor_Cont, Horizontal_Inp, ControlDimDelay * Time.deltaTime);
+
+
+        if (Input.GetKey(KeyCode.P) )
+        {
+            if( dustindexTimer <= 0)
+            {
+                 if (GameData.collected.Count > 0)
+                 {
+                     Collectables col = GameData.collected[0];
+                     col.gameObject.transform.position = EjectutionPos.position;
+                     col.gameObject.SetActive(true);
+                    col.Eject();
+                     GameData.collected.Remove(col);
+                 }
+                 else
+                 {
+                     Debug.Log("DustClear");
+                 }
+                dustindexTimer = 0.1f;
+            }
+            else
+            {
+                dustindexTimer -= Time.deltaTime;
+            }
+        }
+        
+
     }
     private void FixedUpdate()
     {
@@ -62,12 +95,23 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.GetComponent<Collectables>())
         {
             Collectables collect = other.GetComponent<Collectables>();
+
+            collect.activate();
+            
             collect.GetSucked(SuckingSpeed, VaccumePoint,this);
         }
     }
-
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.GetComponent<Collectables>())
+        {
+            Collectables collect = other.GetComponent<Collectables>();
+            collect.deActivate();
+        }
+    }
     public void SuckedCollectables(Collectables coll)
     {
-        Destroy(coll.gameObject);
+        GameData.collected.Add(coll);
+        coll.gameObject.SetActive(false);
     }
 }
