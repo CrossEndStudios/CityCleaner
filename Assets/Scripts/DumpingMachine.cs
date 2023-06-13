@@ -7,6 +7,21 @@ public class DumpingMachine : MonoBehaviour
     public Transform EjectutionPos;
 
     public DumpingDustManager Dustprefab;
+
+    public GameObject[] GarbageBags;
+    int BagIndex;
+    public int garbageCapacity;
+    public int DustCollected;
+
+    private void Start()
+    {
+        foreach (var b in GarbageBags)
+        {
+            b.SetActive(false);
+        }
+    }
+
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -24,15 +39,6 @@ public class DumpingMachine : MonoBehaviour
     float dustindexTimer;
     void StartDumping()
     {
-        /*if (dustindexTimer <= 0)
-        {
-            
-            dustindexTimer = 0.00f;
-        }
-        else
-        {
-            dustindexTimer -= Time.deltaTime;
-        }*/
         if (GameData.collected.Count > 0)
         {
             int colIndex = GameData.collected[0];
@@ -42,6 +48,30 @@ public class DumpingMachine : MonoBehaviour
 
             dust.DumpDustOf(colIndex);
             GameData.collected.RemoveAt(0);
+
+            DustCollected++;
+
+            if(DustCollected >= garbageCapacity)
+            {
+                
+
+                if(BagIndex < GarbageBags.Length)
+                {
+                    BagIndex++;
+                }
+                else
+                {
+                    BagIndex = 0 ;
+                }
+
+                GameObject bag = GarbageBags[BagIndex];
+                bag.SetActive(true);
+                Gamemanager.instance.Truck.AddGarbageBags(bag);
+
+                DustCollected = 0;
+            }
+
+
         }
         else
         {

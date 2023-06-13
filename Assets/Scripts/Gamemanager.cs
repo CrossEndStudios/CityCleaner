@@ -8,6 +8,9 @@ public class Gamemanager : MonoBehaviour
 
     public static Gamemanager instance;
 
+
+    public Truckmanager Truck;
+
     private void Awake()
     {
         if(instance == null) { instance = this; }
