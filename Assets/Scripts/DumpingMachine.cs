@@ -11,7 +11,8 @@ public class DumpingMachine : MonoBehaviour
     public GameObject[] GarbageBags;
     int BagIndex;
     public int garbageCapacity;
-    public int DustCollected;
+    int DustCollected;
+    public int TotalDustCollected;
 
     private void Start()
     {
@@ -50,11 +51,9 @@ public class DumpingMachine : MonoBehaviour
             GameData.collected.RemoveAt(0);
 
             DustCollected++;
-
-            if(DustCollected >= garbageCapacity)
+            TotalDustCollected++;
+            if (DustCollected >= garbageCapacity)
             {
-                
-
                 if(BagIndex < GarbageBags.Length)
                 {
                     BagIndex++;

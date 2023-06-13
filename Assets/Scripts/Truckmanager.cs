@@ -19,17 +19,24 @@ public class Truckmanager : MonoBehaviour
 
     [Header("Drone Properties")]
     public Transform Drone;
+    Rigidbody DroneRB;
     public float DroneMovementSpeed;
     public Transform DroneRestPos;
     public Transform DroneHookPoint;
     public List<GameObject> GarbageBags = new List<GameObject>();
     public DroneProp DroneState;
     public DronesSenses DroneSense;
+
+    public float RotationSpeed;
+
     Vector3 DroneHookingPosition;
+    Vector3 DroneTarget;
 
 
     private void Start()
     {
+
+        DroneRB = Drone.GetComponent<Rigidbody>();
 
         DroneRestPos.position += new Vector3(0, 2, 0);
 
@@ -43,7 +50,6 @@ public class Truckmanager : MonoBehaviour
     {
         GarbageBags.Add(bag);
     }
-
     private void FixedUpdate()
     {
         CheckForGarbage();
@@ -62,6 +68,8 @@ public class Truckmanager : MonoBehaviour
                 if(Drone.position != DroneHookingPosition && DroneSense != DronesSenses.ReadyToHook)
                 {
                     Drone.position = Vector3.MoveTowards(Drone.position, DroneHookingPosition, DroneMovementSpeed * Time.fixedDeltaTime);
+
+                    DroneTarget = DroneHookingPosition;
 
                     if (Drone.position == DroneHookingPosition)
                     {
@@ -84,6 +92,8 @@ public class Truckmanager : MonoBehaviour
                 {
                     Drone.position = Vector3.MoveTowards(Drone.position, DroneRestPos.position, DroneMovementSpeed * Time.fixedDeltaTime);
 
+                    DroneTarget = DroneRestPos.position;
+
                     if (Drone.position == DroneRestPos.position)
                     {
                         GameObject Bag = GarbageBags[0];
@@ -95,10 +105,19 @@ public class Truckmanager : MonoBehaviour
                     }
                 }
             }
+
+            Vector3 direction = DroneTarget - Drone.transform.position;
+            direction.y = 0f;
+
+            Quaternion desiredRotation = Quaternion.LookRotation(direction);
+
+            Drone.transform.rotation = Quaternion.Lerp(Drone.transform.rotation, desiredRotation, RotationSpeed * Time.deltaTime);
+
         }
         else
         {
             DroneSense = DronesSenses.GarbageNotFound;
+            DroneTarget = Vector3.zero;
         }
     }
 
