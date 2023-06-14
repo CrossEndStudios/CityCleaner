@@ -19,7 +19,6 @@ public class Truckmanager : MonoBehaviour
 
     [Header("Drone Properties")]
     public Transform Drone;
-    Rigidbody DroneRB;
     public float DroneMovementSpeed;
     public Transform DroneRestPos;
     public Transform DroneHookPoint;
@@ -35,9 +34,6 @@ public class Truckmanager : MonoBehaviour
 
     private void Start()
     {
-
-        DroneRB = Drone.GetComponent<Rigidbody>();
-
         DroneRestPos.position += new Vector3(0, 2, 0);
 
         Drone.transform.position = DroneRestPos.position;
@@ -121,6 +117,10 @@ public class Truckmanager : MonoBehaviour
         }
     }
 
+    public void MoveToNextHouse()
+    {
+
+    }
 
 
 }

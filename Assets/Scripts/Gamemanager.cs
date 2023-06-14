@@ -11,6 +11,11 @@ public class Gamemanager : MonoBehaviour
 
     public Truckmanager Truck;
 
+    public int CityIndex;
+
+    public LevelData[] Levels;
+    public int LevelIndex;
+
     private void Awake()
     {
         if(instance == null) { instance = this; }
