@@ -13,10 +13,7 @@ public class LevelData : MonoBehaviour
     public bool HouseCleared;
 
 
-    public void OpenNextLevel()
-    {
-        NextlevelWall.SetActive(false);
-    }
+    
 
     public Transform GetTruckPos()
     {

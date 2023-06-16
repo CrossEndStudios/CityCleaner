@@ -24,7 +24,14 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
+        if(transform.parent != null)
+        {
+            transform.SetParent(null);
+        }
+
         TargetOffset = (Target.position - transform.position);
+
+
     }
 
     Vector3 FollowPos;

@@ -24,7 +24,12 @@ public class Gamemanager : MonoBehaviour
     void Start()
     {
         GameData.collected = new List<int>();
+
+        Truck.MoveToNextHouse(Levels[LevelIndex].TruckWaypoint);
+
     }
+
+    
 
     // Update is called once per frame
     void Update()

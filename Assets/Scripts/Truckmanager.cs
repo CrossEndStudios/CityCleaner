@@ -17,6 +17,12 @@ public class Truckmanager : MonoBehaviour
         Hooked
     }
 
+    public enum TruckMovements
+    {
+        Parked,
+        Moving
+    }
+
     [Header("Drone Properties")]
     public Transform Drone;
     public float DroneMovementSpeed;
@@ -30,6 +36,15 @@ public class Truckmanager : MonoBehaviour
 
     Vector3 DroneHookingPosition;
     Vector3 DroneTarget;
+
+    [Space]
+    [Header("Truck Properties")]
+    public TruckMovements TruckState;
+    public float TruckMoveSpeed;
+    public Transform Target;
+    public List<Transform> RoadPoints = new List<Transform>();
+    public int RoadPointsindex;
+
 
 
     private void Start()
@@ -46,6 +61,32 @@ public class Truckmanager : MonoBehaviour
     {
         GarbageBags.Add(bag);
     }
+    private void Update()
+    {
+        if (TruckState == TruckMovements.Moving)
+        {
+            //Truck Movements
+            if(Vector3.Distance(transform.position,Target.position) > 1)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, Target.position, TruckMoveSpeed * Time.deltaTime);
+                transform.LookAt(Target);
+            }
+            else
+            {
+                if(RoadPointsindex < RoadPoints.Count-1)
+                {
+                    RoadPointsindex++;
+                    Target = RoadPoints[RoadPointsindex];
+                }
+                else
+                {
+                    TruckState = TruckMovements.Parked;
+                    return;
+                }
+            }
+        }
+    }
+
     private void FixedUpdate()
     {
         CheckForGarbage();
@@ -117,8 +158,21 @@ public class Truckmanager : MonoBehaviour
         }
     }
 
-    public void MoveToNextHouse()
+    public void MoveToNextHouse(Transform[] Points)
     {
+        RoadPoints.Clear();
+
+        for (int i = 0; i < Points.Length; i++)
+        {
+            Vector3 P_pos = Points[i].transform.position;
+            P_pos.y = transform.position.y;
+            Points[i].transform.position = P_pos;
+
+            RoadPoints.Add(Points[i]);
+        }
+        RoadPointsindex = 0;
+        Target = RoadPoints[RoadPointsindex];
+        TruckState = TruckMovements.Moving;
 
     }
 
