@@ -30,27 +30,23 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-
     // Update is called once per frame
-
-    
-
-    void Update()
+    public void GetInTruck()
     {
-        Vertical_Inp = SimpleInput.GetAxis("Vertical");
-        Horizontal_Inp = SimpleInput.GetAxis("Horizontal");
 
-
-        Ver_Cont = Mathf.Lerp(Ver_Cont, Vertical_Inp, ControlDimDelay * Time.deltaTime);
-        Hor_Cont = Mathf.Lerp(Hor_Cont, Horizontal_Inp, ControlDimDelay * Time.deltaTime);
-
-
-        
-        
+    }
+    public void GetOutTruck()
+    {
 
     }
     private void FixedUpdate()
     {
+        Vertical_Inp = SimpleInput.GetAxis("Vertical");
+        Horizontal_Inp = SimpleInput.GetAxis("Horizontal");
+
+        Ver_Cont = Mathf.Lerp(Ver_Cont, Vertical_Inp, ControlDimDelay * Time.fixedDeltaTime);
+        Hor_Cont = Mathf.Lerp(Hor_Cont, Horizontal_Inp, ControlDimDelay * Time.fixedDeltaTime);
+
         Controls();
     }
     void Controls()
@@ -67,7 +63,6 @@ public class PlayerMovement : MonoBehaviour
             transform.forward = Vector3.MoveTowards(transform.forward,LookVector, RotationSpeed * Time.deltaTime);
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Collectables>())

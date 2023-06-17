@@ -15,12 +15,13 @@ public class Collectables : MonoBehaviour
 
     Vector3 oriScale;
 
-
+    public bool StartSuck;
     private void Start()
     {
         oriScale = transform.localScale;
         //deActivate();
     }
+   
     public int GetIndex()
     {
         return DustIndex;
@@ -37,28 +38,35 @@ public class Collectables : MonoBehaviour
     {
         transform.localScale = oriScale;
     }
-    public void GetSucked(float speed,Transform vaccumepoint,PlayerMovement player)
+
+    Transform vaccumepoint;
+    PlayerMovement _player;
+    Vector3 DecScale = new Vector3(0.01f, 0.01f, 0.01f);
+    public void GetSucked(float speed,Transform _vaccumepoint,PlayerMovement player)
     {
         MovementSpeed = speed;
-        StartCoroutine(MoveToVaccume(vaccumepoint, player));
+        StartSuck = true;
+        _player = player;
+        vaccumepoint = _vaccumepoint;
     }
-
-    IEnumerator MoveToVaccume(Transform vaccumepoint,PlayerMovement player)
+    private void FixedUpdate()
     {
-        Vector3 scale = transform.localScale;
-        Vector3 DecScale = new Vector3(0.01f, 0.01f, 0.01f);
-
-        while (Vector3.Distance(transform.position,vaccumepoint.position) > 0.2f)
+        if (StartSuck)
         {
-            transform.position = Vector3.MoveTowards(transform.position, vaccumepoint.position, MovementSpeed * Time.deltaTime);
+            Vector3 scale = transform.localScale;
 
-            scale = transform.localScale;
-            scale = Vector3.MoveTowards(scale, DecScale, ShrinkingSpeed * Time.deltaTime);
-            transform.localScale = scale;
 
-            yield return new WaitForSeconds(0.01f);
+            if (Vector3.Distance(transform.position, vaccumepoint.position) > 0.2f)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, vaccumepoint.position, MovementSpeed * Time.deltaTime);
+
+                scale = Vector3.MoveTowards(scale, DecScale, ShrinkingSpeed * Time.deltaTime);
+                transform.localScale = scale;
+
+            }
+            else
+                _player.SuckedCollectables(this);
         }
-        player.SuckedCollectables(this);
     }
 
     

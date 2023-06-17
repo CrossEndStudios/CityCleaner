@@ -45,6 +45,10 @@ public class Truckmanager : MonoBehaviour
     public List<Transform> RoadPoints = new List<Transform>();
     public int RoadPointsindex;
 
+    [Space]
+    [Header("Player Properties")]
+    public PlayerMovement player;
+
 
 
     private void Start()
@@ -61,14 +65,16 @@ public class Truckmanager : MonoBehaviour
     {
         GarbageBags.Add(bag);
     }
-    private void Update()
+    private void FixedUpdate()
     {
+        CheckForGarbage();
+
         if (TruckState == TruckMovements.Moving)
         {
             //Truck Movements
             if(Vector3.Distance(transform.position,Target.position) > 1)
             {
-                transform.position = Vector3.MoveTowards(transform.position, Target.position, TruckMoveSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, Target.position, TruckMoveSpeed * Time.fixedDeltaTime);
                 transform.LookAt(Target);
             }
             else
@@ -85,11 +91,6 @@ public class Truckmanager : MonoBehaviour
                 }
             }
         }
-    }
-
-    private void FixedUpdate()
-    {
-        CheckForGarbage();
     }
     void CheckForGarbage()
     {
