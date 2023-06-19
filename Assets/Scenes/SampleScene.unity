@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.32156864, g: 0.8313726, b: 0.8196079, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.015
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -911,6 +911,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 40038799}
+  StartSuck: 0
 --- !u!54 &40038799
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1116,6 +1117,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 47401669}
+  StartSuck: 0
 --- !u!54 &47401669
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1666,6 +1668,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 80663185}
+  StartSuck: 0
 --- !u!54 &80663185
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1755,7 +1758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 85375075}
   m_Layer: 0
-  m_Name: DumpPoint
+  m_Name: DumpPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1772,7 +1775,8 @@ Transform:
   m_LocalPosition: {x: -0.345, y: 2.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1928986119}
   m_Father: {fileID: 1416322245}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3132,6 +3136,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 176797730}
+  StartSuck: 0
 --- !u!54 &176797730
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3262,6 +3267,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 199186067}
+  StartSuck: 0
 --- !u!54 &199186067
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3392,6 +3398,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 199322129}
+  StartSuck: 0
 --- !u!54 &199322129
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3687,6 +3694,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 211952488}
+  StartSuck: 0
 --- !u!54 &211952488
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3967,6 +3975,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 221813390}
+  StartSuck: 0
 --- !u!54 &221813390
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4187,6 +4196,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 224477811}
+  StartSuck: 0
 --- !u!54 &224477811
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4632,6 +4642,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 270285125}
+  StartSuck: 0
 --- !u!54 &270285125
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4762,6 +4773,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 278300612}
+  StartSuck: 0
 --- !u!54 &278300612
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5132,6 +5144,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 287846725}
+  StartSuck: 0
 --- !u!54 &287846725
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5262,6 +5275,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 294618605}
+  StartSuck: 0
 --- !u!54 &294618605
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5782,6 +5796,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 319440896}
+  StartSuck: 0
 --- !u!54 &319440896
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5912,6 +5927,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 323367387}
+  StartSuck: 0
 --- !u!54 &323367387
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6176,6 +6192,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 331926362}
+  StartSuck: 0
 --- !u!54 &331926362
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6861,6 +6878,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 394294356}
+  StartSuck: 0
 --- !u!54 &394294356
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7527,6 +7545,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 444623852}
+  StartSuck: 0
 --- !u!54 &444623852
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7882,6 +7901,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 455243497}
+  StartSuck: 0
 --- !u!54 &455243497
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8449,6 +8469,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 489385033}
+  StartSuck: 0
 --- !u!54 &489385033
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8744,6 +8765,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 495788912}
+  StartSuck: 0
 --- !u!54 &495788912
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9099,6 +9121,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 507868490}
+  StartSuck: 0
 --- !u!54 &507868490
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9649,6 +9672,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 523763374}
+  StartSuck: 0
 --- !u!54 &523763374
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9779,6 +9803,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 526748407}
+  StartSuck: 0
 --- !u!54 &526748407
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10089,6 +10114,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 551119509}
+  StartSuck: 0
 --- !u!54 &551119509
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10219,6 +10245,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 551203044}
+  StartSuck: 0
 --- !u!54 &551203044
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10649,6 +10676,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 577156799}
+  StartSuck: 0
 --- !u!54 &577156799
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10779,6 +10807,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 577724584}
+  StartSuck: 0
 --- !u!54 &577724584
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11367,6 +11396,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 615297561}
+  StartSuck: 0
 --- !u!54 &615297561
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11892,6 +11922,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 634138997}
+  StartSuck: 0
 --- !u!54 &634138997
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12022,6 +12053,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 635339397}
+  StartSuck: 0
 --- !u!54 &635339397
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12572,6 +12604,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 665476303}
+  StartSuck: 0
 --- !u!54 &665476303
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12777,6 +12810,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 674701705}
+  StartSuck: 0
 --- !u!54 &674701705
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12907,6 +12941,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 676683018}
+  StartSuck: 0
 --- !u!54 &676683018
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13504,6 +13539,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 701667289}
+  StartSuck: 0
 --- !u!54 &701667289
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13634,6 +13670,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 702682089}
+  StartSuck: 0
 --- !u!54 &702682089
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14672,6 +14709,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 782922064}
+  StartSuck: 0
 --- !u!54 &782922064
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14967,6 +15005,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 794477944}
+  StartSuck: 0
 --- !u!54 &794477944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15545,6 +15584,8 @@ MonoBehaviour:
   Levels:
   - {fileID: 1010679461}
   LevelIndex: 0
+  TotalDusts: 0
+  DustCollected: 0
 --- !u!4 &825689176
 Transform:
   m_ObjectHideFlags: 0
@@ -15926,6 +15967,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 858137568}
+  StartSuck: 0
 --- !u!54 &858137568
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16461,6 +16503,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 900554209}
+  StartSuck: 0
 --- !u!54 &900554209
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16981,6 +17024,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 932685952}
+  StartSuck: 0
 --- !u!54 &932685952
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17060,6 +17104,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932685949}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &938373672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 938373673}
+  m_Layer: 0
+  m_Name: Seat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &938373673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938373672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2005699171}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &939632213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17441,6 +17516,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 964195525}
+  StartSuck: 0
 --- !u!54 &964195525
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18398,6 +18474,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1037827967}
+  StartSuck: 0
 --- !u!54 &1037827967
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18603,6 +18680,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 1041093556}
+  StartSuck: 0
 --- !u!54 &1041093556
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18997,6 +19075,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1050235887}
+  StartSuck: 0
 --- !u!54 &1050235887
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19292,6 +19371,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 1074110602}
+  StartSuck: 0
 --- !u!54 &1074110602
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19512,6 +19592,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1087244426}
+  StartSuck: 0
 --- !u!54 &1087244426
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20670,6 +20751,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1136247979}
+  StartSuck: 0
 --- !u!54 &1136247979
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21529,6 +21611,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 1167605045}
+  StartSuck: 0
 --- !u!54 &1167605045
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21659,6 +21742,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1169418107}
+  StartSuck: 0
 --- !u!54 &1169418107
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22158,6 +22242,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1198933093}
+  StartSuck: 0
 --- !u!54 &1198933093
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22513,6 +22598,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 1221841729}
+  StartSuck: 0
 --- !u!54 &1221841729
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22619,7 +22705,7 @@ BoxCollider:
   m_GameObject: {fileID: 1227724899}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -22640,6 +22726,7 @@ Transform:
   - {fileID: 1339729199}
   - {fileID: 1371657363}
   - {fileID: 330585546}
+  - {fileID: 2005699171}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22663,11 +22750,14 @@ MonoBehaviour:
   DroneState: 0
   DroneSense: 0
   RotationSpeed: 1
+  SeatPos: {fileID: 938373673}
+  GatePos: {fileID: 1493034733}
   TruckState: 0
   TruckMoveSpeed: 20
   Target: {fileID: 0}
   RoadPoints: []
   RoadPointsindex: 0
+  player: {fileID: 1371657364}
 --- !u!1001 &1228898385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22809,6 +22899,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1235862425}
+  StartSuck: 0
 --- !u!54 &1235862425
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23322,6 +23413,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1277079542}
+  StartSuck: 0
 --- !u!54 &1277079542
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23452,6 +23544,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 1277553793}
+  StartSuck: 0
 --- !u!54 &1277553793
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24186,6 +24279,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1315566147}
+  StartSuck: 0
 --- !u!54 &1315566147
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24829,6 +24923,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1349864335}
+  StartSuck: 0
 --- !u!54 &1349864335
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24959,6 +25054,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1363154834}
+  StartSuck: 0
 --- !u!54 &1363154834
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25164,6 +25260,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 1368004952}
+  StartSuck: 0
 --- !u!54 &1368004952
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25292,12 +25389,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d425f4abb6e87a24a89b64301252065e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerStates: 0
   MovementSpeed: 400
   RotationSpeed: 15
   ControlDimDelay: 5
   VaccumePoint: {fileID: 2016364771}
   SuckingSpeed: 20
-  EjectutionPos: {fileID: 85375075}
 --- !u!54 &1371657365
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25679,6 +25776,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1386796384}
+  StartSuck: 0
 --- !u!54 &1386796384
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25809,6 +25907,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1397267334}
+  StartSuck: 0
 --- !u!54 &1397267334
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26121,7 +26220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9353be0d0ff11404692d0b0d30047391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EjectutionPos: {fileID: 85375075}
+  EjectutionPos:
+  - {fileID: 1928986119}
   Dustprefab: {fileID: 7230320799312504799, guid: 0b51d6a92db8ec8418e732e5feb87220,
     type: 3}
   GarbageBags:
@@ -26183,6 +26283,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1417902846}
+  StartSuck: 0
 --- !u!54 &1417902846
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26688,6 +26789,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1435846464}
+  StartSuck: 0
 --- !u!54 &1435846464
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26818,6 +26920,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 1442942599}
+  StartSuck: 0
 --- !u!54 &1442942599
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27092,6 +27195,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1454066696}
+  StartSuck: 0
 --- !u!54 &1454066696
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27372,6 +27476,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 1485025481}
+  StartSuck: 0
 --- !u!54 &1485025481
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27601,6 +27706,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1488207537}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1493034732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1493034733}
+  m_Layer: 0
+  m_Name: Gate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1493034733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493034732}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.37, y: -0.8499999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2005699171}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1496226660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27742,6 +27878,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1499847024}
+  StartSuck: 0
 --- !u!54 &1499847024
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28277,6 +28414,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1534929604}
+  StartSuck: 0
 --- !u!54 &1534929604
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28497,6 +28635,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1541832654}
+  StartSuck: 0
 --- !u!54 &1541832654
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28717,6 +28856,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1557129038}
+  StartSuck: 0
 --- !u!54 &1557129038
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29673,6 +29813,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1607190965}
+  StartSuck: 0
 --- !u!54 &1607190965
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30107,6 +30248,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 1636231854}
+  StartSuck: 0
 --- !u!1 &1638712921
 GameObject:
   m_ObjectHideFlags: 0
@@ -30439,6 +30581,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1666290470}
+  StartSuck: 0
 --- !u!54 &1666290470
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30923,6 +31066,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1706460392}
+  StartSuck: 0
 --- !u!54 &1706460392
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31197,6 +31341,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1713153965}
+  StartSuck: 0
 --- !u!54 &1713153965
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31507,6 +31652,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1724058976}
+  StartSuck: 0
 --- !u!54 &1724058976
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31637,6 +31783,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 1728245852}
+  StartSuck: 0
 --- !u!54 &1728245852
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31842,6 +31989,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1734684143}
+  StartSuck: 0
 --- !u!54 &1734684143
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33166,6 +33314,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1808417688}
+  StartSuck: 0
 --- !u!54 &1808417688
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33296,6 +33445,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1810667240}
+  StartSuck: 0
 --- !u!54 &1810667240
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34746,6 +34896,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1920313003}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1928986118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1928986119}
+  m_Layer: 0
+  m_Name: DumpPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1928986119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928986118}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 85375075}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1931164721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34872,6 +35053,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1932140742}
+  StartSuck: 0
 --- !u!54 &1932140742
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35152,6 +35334,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1939132750}
+  StartSuck: 0
 --- !u!54 &1939132750
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35432,6 +35615,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 1968914450}
+  StartSuck: 0
 --- !u!54 &1968914450
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35660,6 +35844,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1997063815}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2005699170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2005699171}
+  m_Layer: 0
+  m_Name: Points
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2005699171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005699170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 938373673}
+  - {fileID: 1493034733}
+  m_Father: {fileID: 1227724903}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2009143965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36179,6 +36396,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 2021125997}
+  StartSuck: 0
 --- !u!54 &2021125997
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37415,6 +37633,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 2053212702}
+  StartSuck: 0
 --- !u!54 &2053212702
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37905,6 +38124,7 @@ MonoBehaviour:
   DustIndex: 0
   ShrinkingSpeed: 10
   rb: {fileID: 2084584347}
+  StartSuck: 0
 --- !u!54 &2084584347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38897,6 +39117,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 2134245619}
+  StartSuck: 0
 --- !u!54 &2134245619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39027,6 +39248,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 2136623014}
+  StartSuck: 0
 --- !u!54 &2136623014
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39406,6 +39628,7 @@ MonoBehaviour:
   DustIndex: 1
   ShrinkingSpeed: 10
   rb: {fileID: 2146063356}
+  StartSuck: 0
 --- !u!54 &2146063356
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39536,6 +39759,7 @@ MonoBehaviour:
   DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 2146271330}
+  StartSuck: 0
 --- !u!54 &2146271330
 Rigidbody:
   m_ObjectHideFlags: 0

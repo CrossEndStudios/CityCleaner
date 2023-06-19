@@ -39,6 +39,8 @@ public class Truckmanager : MonoBehaviour
 
     [Space]
     [Header("Truck Properties")]
+    public Transform SeatPos;
+    public Transform GatePos;
     public TruckMovements TruckState;
     public float TruckMoveSpeed;
     public Transform Target;
@@ -59,7 +61,12 @@ public class Truckmanager : MonoBehaviour
 
         DroneState = DroneProp.NotAssigned;
         DroneSense = DronesSenses.GarbageNotFound;
+
+
+        player.GetInTruck(SeatPos);
+
     }
+
 
     public void AddGarbageBags(GameObject bag)
     {
@@ -87,6 +94,9 @@ public class Truckmanager : MonoBehaviour
                 else
                 {
                     TruckState = TruckMovements.Parked;
+
+                    player.GetOutTruck(GatePos);
+
                     return;
                 }
             }

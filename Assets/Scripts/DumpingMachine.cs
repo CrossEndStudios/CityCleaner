@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DumpingMachine : MonoBehaviour
 {
-    public Transform EjectutionPos;
+    public Transform[] EjectutionPos;
 
     public DumpingDustManager Dustprefab;
 
@@ -44,7 +44,7 @@ public class DumpingMachine : MonoBehaviour
         {
             int colIndex = GameData.collected[0];
 
-            DumpingDustManager dust = Instantiate(Dustprefab, EjectutionPos.position, Quaternion.identity);
+            DumpingDustManager dust = Instantiate(Dustprefab, EjectutionPos[Random.Range(0,EjectutionPos.Length)].position, Quaternion.identity);
             //dust.transform.SetParent(EjectutionPos.transform);
 
             dust.DumpDustOf(colIndex);

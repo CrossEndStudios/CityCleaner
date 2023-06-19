@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public enum Player
+    {
+        Driving,
+        Cleaning
+    }
+
+    [Header("Player States")]
+    public Player PlayerStates;
+
+    [Space]
+    [Header("VARIABLES")]
+
     float Vertical_Inp;
     float Horizontal_Inp;
     Vector3 Direction;
@@ -23,23 +35,43 @@ public class PlayerMovement : MonoBehaviour
     public Transform VaccumePoint;
     public float SuckingSpeed;
 
-    [Space]
-    public Transform EjectutionPos;
+
+
+
+    
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
-    public void GetInTruck()
+    public void GetInTruck(Transform Seat)
     {
+        transform.position = Seat.position;
+
+        PlayerStates = Player.Driving;
+
+        transform.SetParent(Seat);
 
     }
-    public void GetOutTruck()
+    public void GetOutTruck(Transform gatepos)
     {
+        transform.position = gatepos.position;
 
+        PlayerStates = Player.Cleaning;
+
+        transform.SetParent(null);
     }
     private void FixedUpdate()
+    {
+
+        if (PlayerStates == Player.Cleaning)
+        {
+            Controls();
+        }
+    }
+    void Controls()
     {
         Vertical_Inp = SimpleInput.GetAxis("Vertical");
         Horizontal_Inp = SimpleInput.GetAxis("Horizontal");
@@ -47,10 +79,7 @@ public class PlayerMovement : MonoBehaviour
         Ver_Cont = Mathf.Lerp(Ver_Cont, Vertical_Inp, ControlDimDelay * Time.fixedDeltaTime);
         Hor_Cont = Mathf.Lerp(Hor_Cont, Horizontal_Inp, ControlDimDelay * Time.fixedDeltaTime);
 
-        Controls();
-    }
-    void Controls()
-    {
+
         Direction = new Vector3(Hor_Cont, -20f * Time.fixedDeltaTime, Ver_Cont);
 
         rb.velocity = (Direction * MovementSpeed) * Time.fixedDeltaTime;
@@ -65,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Collectables>())
+        if (other.gameObject.GetComponent<Collectables>() && (PlayerStates == Player.Cleaning))
         {
             Collectables collect = other.GetComponent<Collectables>();
 
@@ -76,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<Collectables>())
+        if (other.gameObject.GetComponent<Collectables>() && (PlayerStates == Player.Cleaning))
         {
             Collectables collect = other.GetComponent<Collectables>();
             collect.deActivate();

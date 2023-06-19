@@ -15,7 +15,10 @@ public class Gamemanager : MonoBehaviour
 
     public LevelData[] Levels;
     public int LevelIndex;
-
+    [Space]
+    [Header("Garbage")]
+    public int TotalDusts;
+    public int DustCollected;
     private void Awake()
     {
         if(instance == null) { instance = this; }
@@ -29,7 +32,15 @@ public class Gamemanager : MonoBehaviour
 
     }
 
-    
+    public void AddDust(int amt)
+    {
+        DustCollected += amt;
+    }
+    public void CalculateTotalDust(int amt)
+    {
+        TotalDusts += amt;
+    }
+
 
     // Update is called once per frame
     void Update()
