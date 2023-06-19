@@ -82,7 +82,17 @@ public class Truckmanager : MonoBehaviour
             if(Vector3.Distance(transform.position,Target.position) > 1)
             {
                 transform.position = Vector3.MoveTowards(transform.position, Target.position, TruckMoveSpeed * Time.fixedDeltaTime);
-                transform.LookAt(Target);
+
+
+                Vector3 direction = Target.position - transform.position;
+                direction.y = 0f;
+
+                Quaternion desiredRotation = Quaternion.LookRotation(direction);
+
+                transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, RotationSpeed * Time.deltaTime);
+
+
+                //transform.LookAt(Target);
             }
             else
             {
@@ -172,7 +182,7 @@ public class Truckmanager : MonoBehaviour
     public void MoveToNextHouse(Transform[] Points)
     {
         RoadPoints.Clear();
-
+        player.GetInTruck(SeatPos);
         for (int i = 0; i < Points.Length; i++)
         {
             Vector3 P_pos = Points[i].transform.position;

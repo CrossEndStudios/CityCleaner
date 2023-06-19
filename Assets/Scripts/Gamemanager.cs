@@ -31,7 +31,7 @@ public class Gamemanager : MonoBehaviour
         Truck.MoveToNextHouse(Levels[LevelIndex].TruckWaypoint);
 
     }
-
+    
     public void AddDust(int amt)
     {
         DustCollected += amt;
@@ -45,6 +45,11 @@ public class Gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            LevelIndex++;
+
+            Truck.MoveToNextHouse(Levels[LevelIndex].TruckWaypoint);
+        }
     }
 }

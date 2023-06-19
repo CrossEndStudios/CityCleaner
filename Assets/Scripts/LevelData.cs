@@ -12,8 +12,14 @@ public class LevelData : MonoBehaviour
 
     public bool HouseCleared;
 
+    private void Start()
+    {
+        foreach (var p in TruckWaypoint)
+        {
+            p.GetComponent<MeshRenderer>().enabled = false;
+        }
+    }
 
-    
 
     public Transform GetTruckPos()
     {
