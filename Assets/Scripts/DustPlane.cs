@@ -11,10 +11,8 @@ public class DustPlane : MonoBehaviour
     public float cubeSize;
 
 
-    public float min_Thr;
-    public float max_Thr;
+    [Range(0, 100)] public float threshold;
 
-    public float threshold;
 
     public Vector3 PlanePos;
     GameObject DustHolder;
@@ -37,10 +35,8 @@ public class DustPlane : MonoBehaviour
             SetupDusts();
         }
     }
-    float[,] noisemap;
     public void SetupDusts()
     {
-        threshold = Random.Range(min_Thr, max_Thr);
 
         transform.GetComponent<MeshRenderer>().enabled = false;
 
@@ -58,17 +54,6 @@ public class DustPlane : MonoBehaviour
         PlanePos.x -= (transform.lossyScale.x * 5) - cubeSize;
         PlanePos.z -= (transform.lossyScale.z * 5) - cubeSize;
 
-        // Generate noisemap
-        noisemap = new float[planeWidth, planeHeight];
-        for (int i = 0; i < planeWidth; i++)
-        {
-            for (int j = 0; j < planeHeight; j++)
-            {
-                float value = Mathf.PerlinNoise(i * Random.Range(0.1f, 0.15f), j * Random.Range(0.1f, 0.15f));
-                //float value = Mathf.PerlinNoise(i * .1f, j * .1f);
-                noisemap[i, j] = value;
-            }
-        }
 
         SpawnDusts();
     }
@@ -83,7 +68,7 @@ public class DustPlane : MonoBehaviour
         {
             for (int j = 0; j < YIteration; j++)
             {
-                if (noisemap[i, j] > threshold)
+                if (Random.Range(0, 100) < threshold)
                 {
                     Vector3 position = new Vector3((i * cubeSize) + PlanePos.x, PlanePos.y, (j * cubeSize) + PlanePos.z);
 

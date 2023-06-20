@@ -292,8 +292,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2816911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 190.0855, y: 2.39, z: -11.7406}
-  m_LocalScale: {x: 5.316525, y: 1, z: 5.7819376}
+  m_LocalPosition: {x: 180.2103, y: 2.39, z: 58.5297}
+  m_LocalScale: {x: 7.85878, y: 1, z: 8.659155}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -311,12 +311,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7233f4e5eff9f4ebc553f3ab42e4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubePrefab: {fileID: 8866573114286705227, guid: 5829c17801e6454f8b2a087af9cf0c0c,
+  cubePrefab: {fileID: 8109433179751374120, guid: 51f59441a81ae834ab8f256ca17204e5,
     type: 3}
   cubeSize: 1
-  min_Thr: 0.25
-  max_Thr: 0.45
-  threshold: 0
+  threshold: 100
   PlanePos: {x: 0, y: 0, z: 0}
   extraStuffs: []
   ExtraStuffSpawnChance: 0

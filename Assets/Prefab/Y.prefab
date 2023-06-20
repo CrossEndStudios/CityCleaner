@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b158323a8c0144f8658912e1c35ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DustIndex: 3
+  DustIndex: 2
   ShrinkingSpeed: 10
   rb: {fileID: 1564064910141675562}
+  StartSuck: 0

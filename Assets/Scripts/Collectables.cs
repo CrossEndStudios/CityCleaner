@@ -18,6 +18,8 @@ public class Collectables : MonoBehaviour
     public bool StartSuck;
     private void Start()
     {
+        this.enabled = false;
+
         oriScale = transform.localScale;
         //deActivate();
     }
@@ -65,7 +67,11 @@ public class Collectables : MonoBehaviour
 
             }
             else
+            {
                 _player.SuckedCollectables(this);
+                this.enabled = false;
+
+            }
         }
     }
 

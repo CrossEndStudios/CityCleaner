@@ -98,9 +98,13 @@ public class PlayerMovement : MonoBehaviour
         {
             Collectables collect = other.GetComponent<Collectables>();
 
+            collect.enabled = true;
+
             collect.activate();
             
             collect.GetSucked(SuckingSpeed, VaccumePoint,this);
+            
+
         }
     }
     private void OnTriggerExit(Collider other)
@@ -109,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Collectables collect = other.GetComponent<Collectables>();
             collect.deActivate();
+            collect.enabled = false;
         }
     }
     public void SuckedCollectables(Collectables coll)

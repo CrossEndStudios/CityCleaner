@@ -35,9 +35,13 @@ public class CameraFollow : MonoBehaviour
     }
 
     Vector3 FollowPos;
-    void Follow()
+    private void Update()
     {
         FollowPos = Target.position - TargetOffset;
+    }
+    void Follow()
+    {
+        
 
         transform.LookAt(Target);
         if (LerpPosition)
