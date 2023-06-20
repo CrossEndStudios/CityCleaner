@@ -32,10 +32,10 @@ public class DustPlane : MonoBehaviour
 
     void Start()
     {
-        /*if (setup)
+        if (setup)
         {
             SetupDusts();
-        }*/
+        }
     }
     float[,] noisemap;
     public void SetupDusts()
